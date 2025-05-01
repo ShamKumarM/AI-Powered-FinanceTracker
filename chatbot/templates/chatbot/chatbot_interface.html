@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="background-color: rgba(0, 0, 255, 0.1); padding: 20px; margin: 0 auto 20px; border-radius: 10px; max-width: 800px;">
+    <h2 style="color: #000; margin-bottom: 15px;">AI Financial Chatbot</h2>
+
+    <!-- Chat Window -->
+    <div id="chat-window" style="background-color: #fff; border-radius: 10px; padding: 15px; height: 400px; overflow-y: auto; border: 1px solid #ccc;">
+        {% for message in chat_history %}
+            <div style="margin-bottom: 15px;">
+                <div><strong style="color: #007bff;">You:</strong> {{ message.text_input }}</div>
+                <div><strong style="color: #28a745;">Bot:</strong> {{ message.gemini_output }}</div>
+            </div>
+        {% empty %}
+            <p style="text-align: center; color: #888;">No conversation yet. Start chatting!</p>
+        {% endfor %}
+    </div>
+
+    <!-- Chat Input and Clear -->
+    <div style="margin-top: 15px; display: flex; gap: 10px;">
+        <!-- Chat Form -->
+        <form method="POST" action="{% url 'chatbot_response' %}" style="flex-grow: 1; display: flex; gap: 10px;">
+            {% csrf_token %}
+            <input type="text" name="user_input" placeholder="Ask something..." required
+                   style="flex-grow: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            <button type="submit"
+                    style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Send
+            </button>
+        </form>
+
+        <!-- Optional Clear Button -->
+        <form method="POST" action="{% url 'chatbot_response' %}">
+            {% csrf_token %}
+            <input type="hidden" name="clear_chat" value="1">
+            <button type="submit"
+                    style="background-color: #dc3545; color: white; padding: 10px 15px; border: none; border-radius: 5px;">
+                Clear
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

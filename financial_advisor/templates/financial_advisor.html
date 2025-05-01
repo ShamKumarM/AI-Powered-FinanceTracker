@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background-color: rgba(0, 0, 255, 0.1); padding: 20px; margin-bottom: 20px; border-radius: 10px;">
+    <h2 style="color: #000000;font-weight: bold;font-size: 40px;">Your Personalized Financial Advice</h2>
+
+    <p style="font-size: 30px;"><strong>Income:</strong> ₹{{ data.income }}</p>
+    <p style="font-size: 30px;"><strong>Expenses:</strong> ₹{{ data.expenses }}</p>
+    <p style="font-size: 30px;"><strong>Recommended Savings:</strong> ₹{{ data.savings_target }}</p>
+
+    <h4 style="margin-top: 15px;font-size: 30px;font-weight: bold;">Advice:</h4>
+    <ul>
+        {% for tip in data.advice %}
+            <li style="font-size: 25px;">{{ tip }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
