@@ -5,7 +5,7 @@ from .models import ChatBot
 import google.generativeai as genai
 
 # ✅ Configure your Gemini API key here
-genai.configure(api_key="AIzaSyBEgbo2MIsVWSu4vbRaOwipmU7bBmZiY08")  # 🔐 Replace with actual key securely in production!
+genai.configure(api_key="Your key")  # 🔐 Replace with actual key securely in production!
 
 @login_required
 def chatbot_interface(request):
