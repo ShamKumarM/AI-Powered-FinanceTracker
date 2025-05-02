@@ -44,13 +44,13 @@ An intelligent full-stack web application designed to help users track, analyze,
 
 > Add your app screenshots in the placeholders below:
 
-| Dashboard View | Spending Analysis |
+| Dashboard View | Goal Analysis |
 |----------------|-------------------|
-| ![Dashboard Screenshot](images/dashboard.png) | ![Spending Screenshot](images/spending.png) |
+| ![Dashboard Screenshot](dashboard.png) | ![Goal Screenshot](goals.png) |
 
-| Net Worth & Assets | Chatbot & Alerts |
+| Financial Advisor | Chatbot |
 |--------------------|------------------|
-| ![Net Worth Screenshot](images/networth.png) | ![Chatbot Screenshot](images/chatbot.png) |
+| ![advisor Screenshot](financial_advisor.png) | ![Chatbot Screenshot](chatbot.png) |
 
 ---
 
